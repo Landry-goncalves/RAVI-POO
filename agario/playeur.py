@@ -1,19 +1,27 @@
-class playeur:
+import pygame
+from pygame.math import Vector3, Vector2
+
+
+class Playeur:
 
     def __init__(self):
-        self.size = ()
-        self.vitesse = ()
-        self.forme = ()
-        self.couleur = vector3()
-        self.position = vector2()
-        self.direction = vector2()
+        self.size = 10
+        self.forme = 'rond'
+        self.couleur = Vector3(255, 0, 0)
+        self.position = Vector2(10, 10)
+        self.direction = Vector2(10, 10)
 
-    def manger (self):
-        self.size[1] = self.size[1]+self.size[1]
+    def manger(self):
+        pass
 
-    def mourir (self):
+    def mourir(self):
+        pass
 
-    def deplacer (self):
+    def deplacer(self, position):
+        self.position.x = position[0]
+        self.position.y = position[1]
 
-    def afficher (self):
-        
+    def afficher(self, core):
+        if self.forme == 'rond':
+            pygame.draw.circle(core.screen, (int(self.couleur.x), int(self.couleur.y), int(self.couleur.z)),
+                               (int(self.position.x), int(self.position.y)), self.size)
