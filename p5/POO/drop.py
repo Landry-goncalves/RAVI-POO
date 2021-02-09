@@ -1,6 +1,6 @@
 import random
 import pygame
-from pygame.math import Vector2, Vector3
+from pygame.math import Vector2,
 
 
 class Drop:
@@ -11,7 +11,6 @@ class Drop:
         self.G = random.randint(0,255)
         self.B = random.randint(0,255)
         self.position = Vector2(random.randint(0,largeur), random.randint(-200,0))
-        self.position2 = Vector3(random.randint(0,largeur), random.randint(-200,0))
 
     def tomber(self, taillefenetre):
         self.position.y = self.position.y + self.gravity
